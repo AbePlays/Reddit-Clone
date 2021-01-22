@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="bg-gray-100 px-2 py-4 min-h-screen">
-      <Categories changeCategory={setCategory} />
+      <Categories changeCategory={setCategory} category={category} />
       {posts.map((post) => {
         return (
           <Post

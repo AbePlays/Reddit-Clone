@@ -1,13 +1,16 @@
 import Category from "./Category";
 
-export default function Categories({ changeCategory }) {
-  const onClickHandler = (category) => {
-    changeCategory(category);
+export default function Categories({ changeCategory, category }) {
+  const onClickHandler = (newCategory) => {
+    changeCategory(newCategory);
   };
 
   return (
     <div className="flex mx-auto my-4 p-4 max-w-xl shadow bg-white rounded justify-around font-semibold text-gray-500">
-      <Category onClick={() => onClickHandler("best")}>
+      <Category
+        onClick={() => onClickHandler("best")}
+        isSelected={category === "best" ? true : false}
+      >
         <svg
           className="w-4"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +27,10 @@ export default function Categories({ changeCategory }) {
         </svg>
         <p className="ml-2">Best</p>
       </Category>
-      <Category onClick={() => onClickHandler("hot")}>
+      <Category
+        onClick={() => onClickHandler("hot")}
+        isSelected={category === "hot" ? true : false}
+      >
         <svg
           className="w-4"
           xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +53,10 @@ export default function Categories({ changeCategory }) {
         </svg>
         <p className="ml-2">Hot</p>
       </Category>
-      <Category onClick={() => onClickHandler("new")}>
+      <Category
+        onClick={() => onClickHandler("new")}
+        isSelected={category === "new" ? true : false}
+      >
         <svg
           className="w-4"
           xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +73,10 @@ export default function Categories({ changeCategory }) {
         </svg>
         <p className="ml-2">New</p>
       </Category>
-      <Category onClick={() => onClickHandler("top")}>
+      <Category
+        onClick={() => onClickHandler("top")}
+        isSelected={category === "top" ? true : false}
+      >
         <svg
           className="w-4"
           xmlns="http://www.w3.org/2000/svg"
