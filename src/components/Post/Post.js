@@ -5,6 +5,7 @@ export default function Post({
   comments,
   createdAt,
   likes,
+  image,
 }) {
   return (
     <div className="mx-auto my-4 p-4 max-w-xl shadow bg-white rounded">
@@ -14,7 +15,12 @@ export default function Post({
         <p className="ml-1">•</p>
         <p className="ml-1">Posted by u/{authorName}</p>
       </div>
-      <p className="mt-2">{title}</p>
+      <p className="mt-2 text-lg leading-snug">{title}</p>
+      {image && (
+        <div className="mt-2 rounded overflow-hidden">
+          <img className="w-full" src={image.replaceAll("amp;", "")} alt="" />
+        </div>
+      )}
       <div className="flex items-center mt-6 text-gray-500 text-xs font-bold">
         <div className="flex items-center">
           <svg
