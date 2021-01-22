@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-gray-100 px-2 py-4">
       {posts.map((post) => {
         return (
           <Post
