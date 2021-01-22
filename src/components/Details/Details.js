@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function Details() {
+  const [comments, setComments] = useState([]);
   const { state } = useLocation();
+  const postId = state.post.id;
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      const res = await fetch(`http://www.reddit.com/comments/${postId}.json`);
+      const data = await res.json();
+      setComments(data[1].data.children);
+    };
+
+    fetchComments();
+  }, [postId]);
 
   return (
     <div className="bg-gray-100 px-2 py-4 min-h-screen">
@@ -72,6 +85,54 @@ export default function Details() {
             <p className="ml-2">{state.post.comments} comments</p>
           </div>
           {/* <p>{createdAt}</p> */}
+        </div>
+        <div className="mt-4">
+          {comments.map((comment) => {
+            return (
+              <div key={comment.data.id} className="my-4">
+                <div className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-red-100"></div>
+                  <h1 className="ml-2 text-sm font-semibold text-gray-500">
+                    {comment.data.author}
+                  </h1>
+                </div>
+                <div className="ml-8">
+                  <p className="leading-snug">{comment.data.body}</p>
+                  <div className="flex items-center mt-2 text-gray-500 text-xs font-bold">
+                    <svg
+                      className="w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 10l7-7m0 0l7 7m-7-7v18"
+                      />
+                    </svg>
+                    <p className="ml-2">{comment.data.ups}</p>
+                    <svg
+                      className="w-4 ml-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
