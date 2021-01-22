@@ -25,6 +25,7 @@ export default function Home() {
         return (
           <Post
             key={post.data.id}
+            id={post.data.id}
             subRedditName={post.data.subreddit_name_prefixed}
             authorName={post.data.author}
             title={post.data.title}

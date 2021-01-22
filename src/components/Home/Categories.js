@@ -9,7 +9,7 @@ export default function Categories({ changeCategory, category }) {
     <div className="flex mx-auto my-4 p-4 max-w-xl shadow bg-white rounded justify-around font-semibold text-gray-500">
       <Category
         onClick={() => onClickHandler("best")}
-        isSelected={category === "best" ? true : false}
+        isSelected={category === "best"}
       >
         <svg
           className="w-4"
@@ -29,7 +29,7 @@ export default function Categories({ changeCategory, category }) {
       </Category>
       <Category
         onClick={() => onClickHandler("hot")}
-        isSelected={category === "hot" ? true : false}
+        isSelected={category === "hot"}
       >
         <svg
           className="w-4"
@@ -55,7 +55,7 @@ export default function Categories({ changeCategory, category }) {
       </Category>
       <Category
         onClick={() => onClickHandler("new")}
-        isSelected={category === "new" ? true : false}
+        isSelected={category === "new"}
       >
         <svg
           className="w-4"
@@ -75,7 +75,7 @@ export default function Categories({ changeCategory, category }) {
       </Category>
       <Category
         onClick={() => onClickHandler("top")}
-        isSelected={category === "top" ? true : false}
+        isSelected={category === "top"}
       >
         <svg
           className="w-4"
