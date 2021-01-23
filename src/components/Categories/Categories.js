@@ -25,7 +25,7 @@ export default function Categories({ changeCategory, category }) {
             d="M13 10V3L4 14h7v7l9-11h-7z"
           />
         </svg>
-        <p className="ml-2">Best</p>
+        <p className="ml-1">Best</p>
       </Category>
       <Category
         onClick={() => onClickHandler("hot")}
@@ -51,7 +51,7 @@ export default function Categories({ changeCategory, category }) {
             d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
           />
         </svg>
-        <p className="ml-2">Hot</p>
+        <p className="ml-1">Hot</p>
       </Category>
       <Category
         onClick={() => onClickHandler("new")}
@@ -71,7 +71,7 @@ export default function Categories({ changeCategory, category }) {
             d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
           />
         </svg>
-        <p className="ml-2">New</p>
+        <p className="ml-1">New</p>
       </Category>
       <Category
         onClick={() => onClickHandler("top")}
@@ -91,7 +91,7 @@ export default function Categories({ changeCategory, category }) {
             d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"
           />
         </svg>
-        <p className="ml-2">Top</p>
+        <p className="ml-1">Top</p>
       </Category>
     </div>
   );

@@ -1,16 +1,23 @@
+import moment from "moment";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import Spinner from "../Spinner";
+import { kFormatter } from "../Utility";
+
 export default function Details() {
+  const [loading, setLoading] = useState(true);
   const [comments, setComments] = useState([]);
   const { state } = useLocation();
   const postId = state.post.id;
 
   useEffect(() => {
     const fetchComments = async () => {
+      setLoading(true);
       const res = await fetch(`http://www.reddit.com/comments/${postId}.json`);
       const data = await res.json();
       setComments(data[1].data.children);
+      setLoading(false);
     };
 
     fetchComments();
@@ -27,9 +34,9 @@ export default function Details() {
         </div>
         <p className="mt-2 text-lg leading-snug">{state.post.title}</p>
         {state.post.image && (
-          <div className="mt-2 rounded overflow-hidden">
+          <div className="mt-2 rounded overflow-hidden bg-gray-300">
             <img
-              className="w-full"
+              className="mx-auto"
               src={state.post.image.replaceAll("amp;", "")}
               alt=""
             />
@@ -51,7 +58,7 @@ export default function Details() {
                 d="M5 10l7-7m0 0l7 7m-7-7v18"
               />
             </svg>
-            <p className="ml-2">{state.post.likes}</p>
+            <p className="ml-2">{kFormatter(state.post.likes)}</p>
             <svg
               className="w-4 ml-2"
               xmlns="http://www.w3.org/2000/svg"
@@ -82,25 +89,31 @@ export default function Details() {
                 d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
               />
             </svg>
-            <p className="ml-2">{state.post.comments} comments</p>
+            <p className="ml-2">{kFormatter(state.post.comments)} comments</p>
           </div>
-          {/* <p>{createdAt}</p> */}
         </div>
+        <hr className="my-4" />
+        {loading && <Spinner />}
         <div className="mt-4">
           {comments.map((comment) => {
             return (
               <div key={comment.data.id} className="my-4">
-                <div className="flex items-start">
+                <div className="flex items-center text-sm font-thin">
                   <div className="w-6 h-6 rounded-full bg-red-100"></div>
-                  <h1 className="ml-2 text-sm font-semibold text-gray-500">
+                  <h1 className="ml-2">
                     {comment.data.author}
+                    <span className="ml-1 text-xs text-gray-500">
+                      {moment.unix(comment.data.created_utc).fromNow()}
+                    </span>
                   </h1>
                 </div>
                 <div className="ml-8">
-                  <p className="leading-snug">{comment.data.body}</p>
-                  <div className="flex items-center mt-2 text-gray-500 text-xs font-bold">
+                  <p className="leading-snug font-extralight">
+                    {comment.data.body}
+                  </p>
+                  <div className="flex items-center mt-2 text-gray-500 text-xs font-semibold">
                     <svg
-                      className="w-4"
+                      className="w-3"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -113,9 +126,9 @@ export default function Details() {
                         d="M5 10l7-7m0 0l7 7m-7-7v18"
                       />
                     </svg>
-                    <p className="ml-2">{comment.data.ups}</p>
+                    <p className="ml-2">{kFormatter(comment.data.ups)}</p>
                     <svg
-                      className="w-4 ml-2"
+                      className="w-3 ml-2"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"

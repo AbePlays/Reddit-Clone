@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
 
-import Categories from "./Categories";
+import Categories from "../Categories";
 import Post from "../Post";
+import Spinner from "../Spinner";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState("best");
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+      setPosts([]);
       const res = await fetch(`http://www.reddit.com/${category}.json`);
       const data = await res.json();
       console.log(data);
       setPosts(data.data.children);
+      setLoading(false);
     };
 
     fetchData();
@@ -21,6 +26,7 @@ export default function Home() {
   return (
     <div className="bg-gray-100 px-2 py-4 min-h-screen">
       <Categories changeCategory={setCategory} category={category} />
+      {loading && <Spinner />}
       {posts.map((post) => {
         return (
           <Post
