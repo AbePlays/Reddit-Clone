@@ -27,20 +27,35 @@ export default function Details() {
     <div className="bg-gray-100 px-2 py-4 min-h-screen">
       <div className="mx-auto my-4 p-4 max-w-xl shadow bg-white rounded">
         <div className="flex items-center text-xs">
-          <div className="w-4 h-4 rounded-full bg-red-100"></div>
-          <h1 className="font-bold ml-2">{state.post.subRedditName}</h1>
-          <p className="ml-1">•</p>
-          <p className="ml-1">Posted by u/{state.post.authorName}</p>
+          <div className="w-6 h-6 rounded-full bg-red-100"></div>
+          <div>
+            <h1 className="font-bold ml-2">{state.post.subRedditName}</h1>
+            <div className="flex ml-2">
+              <p>Posted by u/{state.post.authorName}</p>
+              <p className="ml-1">•</p>
+              <p className="ml-1">
+                {moment.unix(state.post.createdAt).fromNow()}
+              </p>
+            </div>
+          </div>
         </div>
         <p className="mt-2 text-lg leading-snug">{state.post.title}</p>
-        {state.post.image && (
-          <div className="mt-2 rounded overflow-hidden bg-gray-300">
-            <img
-              className="mx-auto"
-              src={state.post.image.replaceAll("amp;", "")}
-              alt=""
-            />
+        {state.post.video ? (
+          <div className="mt-2 rounded overflow-hidden">
+            <video controls>
+              <source src={state.post.video} />
+            </video>
           </div>
+        ) : (
+          state.post.image && (
+            <div className="mt-2 rounded overflow-hidden">
+              <img
+                className="mx-auto rounded"
+                src={state.post.image.replaceAll("amp;", "")}
+                alt=""
+              />
+            </div>
+          )
         )}
         <div className="flex items-center mt-6 text-gray-500 text-xs font-bold">
           <div className="flex items-center">

@@ -27,14 +27,22 @@ export default function Post(props) {
             </div>
           </div>
           <p className="mt-2 text-lg leading-snug">{props.title}</p>
-          {props.image && (
+          {props.video ? (
             <div className="mt-2 rounded overflow-hidden">
-              <img
-                className="mx-auto rounded"
-                src={props.image.replaceAll("amp;", "")}
-                alt=""
-              />
+              <video controls>
+                <source src={props.video} />
+              </video>
             </div>
+          ) : (
+            props.image && (
+              <div className="mt-2 rounded overflow-hidden">
+                <img
+                  className="mx-auto rounded"
+                  src={props.image.replaceAll("amp;", "")}
+                  alt=""
+                />
+              </div>
+            )
           )}
           <div className="flex items-center mt-6 text-gray-500 text-xs font-bold">
             <div className="flex items-center">

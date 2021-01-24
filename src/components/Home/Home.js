@@ -41,6 +41,11 @@ export default function Home() {
             image={
               post.data.preview ? post.data.preview.images[0].source.url : null
             }
+            video={
+              post.data.media && post.data.media.reddit_video
+                ? post.data.media.reddit_video.fallback_url
+                : null
+            }
           />
         );
       })}
