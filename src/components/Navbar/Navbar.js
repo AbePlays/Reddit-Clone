@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import RedditLogo from "../../assets/reddit-logo.png";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <div className="shadow">
       <div className="max-w-screen-xl mx-auto py-2 px-4">
@@ -14,4 +14,6 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};
+
+export default Navbar;

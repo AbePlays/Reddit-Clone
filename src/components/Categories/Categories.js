@@ -1,6 +1,6 @@
 import Category from "./Category";
 
-export default function Categories({ changeCategory, category }) {
+const Categories = ({ changeCategory, category }) => {
   const onClickHandler = (newCategory) => {
     changeCategory(newCategory);
   };
@@ -95,4 +95,6 @@ export default function Categories({ changeCategory, category }) {
       </Category>
     </div>
   );
-}
+};
+
+export default Categories;

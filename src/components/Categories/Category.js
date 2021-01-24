@@ -1,12 +1,16 @@
-export default function Category(props) {
+const Category = (props) => {
+  const { isSelected, ...rest } = props;
+
   return (
     <div
       className={`flex items-center cursor-pointer px-3 py-1 rounded-full ${
-        props.isSelected && "bg-gray-100"
+        isSelected && "bg-gray-100"
       }`}
-      {...props}
+      {...rest}
     >
       {props.children}
     </div>
   );
-}
+};
+
+export default Category;
