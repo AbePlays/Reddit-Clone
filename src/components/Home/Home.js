@@ -16,7 +16,7 @@ const Home = () => {
       setPosts([]);
       setLoading(true);
 
-      const result = await fetch(`http://www.reddit.com/${category}.json`);
+      const result = await fetch(`https://www.reddit.com/${category}.json`);
       const fetchedData = await result.json();
 
       setPosts(fetchedData?.data?.children);

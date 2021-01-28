@@ -11,11 +11,12 @@ const Details = () => {
 
   // fetching comments
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchComments = async () => {
       setLoading(true);
 
       const result = await fetch(
-        `http://www.reddit.com/comments/${postId}.json`
+        `https://www.reddit.com/comments/${postId}.json`
       );
       const fetchedData = await result.json();
       setComments(fetchedData[1]?.data?.children);

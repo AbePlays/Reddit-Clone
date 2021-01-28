@@ -15,6 +15,7 @@ const PostBody = ({ title, videoUrl, imageUrl }) => {
               className="mx-auto rounded"
               src={imageUrl.replaceAll("amp;", "")}
               alt="post"
+              loading="lazy"
             />
           </div>
         )
