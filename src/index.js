@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
-import Auth0ProviderWithHistory from "./components/Auth";
+import { Auth0ProviderWithHistory } from "./components/Auth";
 
 ReactDOM.render(
   <React.StrictMode>

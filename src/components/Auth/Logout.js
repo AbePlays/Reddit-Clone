@@ -1,11 +1,11 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
-const LogoutButton = () => {
+const Logout = () => {
   const { logout } = useAuth0();
 
   return (
     <div
-      className="h-8 w-8 flex justify-center text-gray-500 items-center border border-gray-300 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-black hover:text-white transition duration-300"
+      className="h-8 w-8 flex justify-center text-gray-500 items-center border border-gray-300 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white transition duration-300"
       onClick={() =>
         logout({
           returnTo: window.location.origin,
@@ -30,4 +30,4 @@ const LogoutButton = () => {
   );
 };
 
-export default LogoutButton;
+export default Logout;

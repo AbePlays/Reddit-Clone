@@ -12,7 +12,7 @@ const Auth = () => {
         <div className="mt-8">
           <h1>To use the application, please login or create an account</h1>
           <div
-            className="mt-4 flex justify-center border border-gray-300 w-max mx-auto py-2 px-4 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-black hover:text-white transition duration-300"
+            className="mt-4 flex justify-center items-center border border-gray-300 w-max mx-auto py-2 px-4 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white transition duration-300"
             onClick={() => loginWithRedirect()}
           >
             <svg

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import RedditLogo from "../../assets/reddit-logo.png";
-import LogoutButton from "../Auth/Logout";
+import { Logout } from "../Auth";
 
 const Navbar = () => {
   const { user } = useAuth0();
@@ -25,7 +25,7 @@ const Navbar = () => {
                   alt="username"
                 />
               </div>
-              <LogoutButton className="ml-2" />
+              <Logout className="ml-2" />
             </>
           )}
         </div>
