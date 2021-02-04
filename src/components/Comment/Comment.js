@@ -7,7 +7,7 @@ const Comment = ({ loading, comments }) => {
       <hr className="my-4" />
       {/* show spinner while the comments loads */}
       {loading && <Spinner />}
-      <div className="mt-4">
+      <div className="mt-4 dark:text-white-dark text-black">
         {comments.map((comment) => {
           if (comment.data) {
             return (

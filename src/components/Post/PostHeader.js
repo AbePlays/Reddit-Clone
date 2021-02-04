@@ -1,7 +1,7 @@
 const PostHeader = ({ subRedditName, authorName, relativeTime }) => {
   return (
     <div className="flex items-center text-xs">
-      <div className="w-6 h-6 rounded-full bg-red-100"></div>
+      <div className="w-6 h-6 rounded-full bg-secondary"></div>
       <div>
         <h1 className="font-bold ml-2">{subRedditName}</h1>
         <div className="flex ml-2">

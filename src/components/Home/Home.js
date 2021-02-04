@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Categories from "../Categories";
 import Post from "../Post";
 import Spinner from "../Spinner";
+import { Wrapper } from "../Utility";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -27,7 +28,7 @@ const Home = () => {
   }, [category]);
 
   return (
-    <div className="bg-gray-100 px-2 py-4 min-h-screen">
+    <Wrapper>
       <Categories changeCategory={setCategory} category={category} />
       {/* Show spinner while fetching posts */}
       {loading && <Spinner />}
@@ -53,7 +54,7 @@ const Home = () => {
           return (
             <div
               key={post.data.id}
-              className="mx-auto my-4 max-w-xl shadow bg-white rounded"
+              className="my-4 bg-white dark:bg-background-secondary shadow rounded transition-colors duration-500"
             >
               <Link
                 to={{
@@ -70,7 +71,7 @@ const Home = () => {
         }
         return null;
       })}
-    </div>
+    </Wrapper>
   );
 };
 

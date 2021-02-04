@@ -7,3 +7,5 @@ export const kFormatter = (num) => {
     return "-";
   }
 };
+
+export { default as Wrapper } from "./Wrapper";

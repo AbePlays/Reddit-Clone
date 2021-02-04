@@ -6,7 +6,11 @@ const Categories = ({ changeCategory, category }) => {
   };
 
   return (
-    <div className="flex mx-auto my-4 p-4 max-w-xl shadow bg-white rounded justify-around font-semibold text-gray-500">
+    <div
+      className="flex mx-auto my-4 p-4 max-w-xl shadow
+    bg-white dark:bg-background-secondary transition-colors duration-500
+    rounded justify-around font-semibold text-gray-500"
+    >
       <Category
         onClick={() => onClickHandler("best")}
         isSelected={category === "best"}

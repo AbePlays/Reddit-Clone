@@ -5,7 +5,7 @@ import Comment from "../Comment";
 
 const Post = (props) => {
   return (
-    <div className="p-4">
+    <div className="p-4 dark:text-white-dark text-black">
       <PostHeader
         subRedditName={props.subRedditName}
         authorName={props.authorName}

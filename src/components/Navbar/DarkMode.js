@@ -1,7 +1,7 @@
 const DarkMode = ({ isDark }) => {
   return (
-    <div className="h-8 w-8 flex justify-center text-gray-500 items-center border border-gray-300 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white transition duration-300 ml-2">
-      {!isDark ? (
+    <div className="h-8 w-8 flex justify-center items-center border border-border rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary transition duration-300 ml-2">
+      {isDark ? (
         <svg
           className="w-4"
           xmlns="http://www.w3.org/2000/svg"

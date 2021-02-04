@@ -1,18 +1,19 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
 import background from "../../assets/login-background.svg";
+import { Wrapper } from "../Utility";
 
 const Auth = () => {
   const { loginWithRedirect } = useAuth0();
 
   return (
-    <div className="bg-gray-100 px-2 py-4 min-h-screen">
-      <div className="mx-auto my-4 p-4 max-w-xl shadow bg-white rounded font-semibold text-gray-500 text-center">
+    <Wrapper>
+      <div className="p-4 shadow bg-white dark:bg-background-secondary transition-colors duration-500 rounded font-semibold text-center">
         <img src={background} alt="security" />
-        <div className="mt-8">
+        <div className="mt-8 font-medium">
           <h1>To use the application, please login or create an account</h1>
           <div
-            className="mt-4 flex justify-center items-center border border-gray-300 w-max mx-auto py-2 px-4 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white transition duration-300"
+            className="mt-4 flex justify-center items-center border w-max mx-auto py-2 px-4 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white transition duration-300"
             onClick={() => loginWithRedirect()}
           >
             <svg
@@ -33,7 +34,7 @@ const Auth = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

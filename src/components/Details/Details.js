@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import Post from "../Post";
+import { Wrapper } from "../Utility";
 
 const Details = () => {
   const [loading, setLoading] = useState(true);
@@ -28,8 +29,8 @@ const Details = () => {
   }, [postId]);
 
   return (
-    <div className="bg-gray-100 px-2 py-4 min-h-screen">
-      <div className="mx-auto my-4 max-w-xl shadow bg-white rounded">
+    <Wrapper>
+      <div className="bg-white dark:bg-background-secondary my-4 shadow rounded transition-colors duration-500">
         <Post
           {...state.post}
           showComments
@@ -37,7 +38,7 @@ const Details = () => {
           comments={comments}
         />
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
