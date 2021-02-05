@@ -54,7 +54,7 @@ const Home = () => {
           return (
             <div
               key={post.data.id}
-              className="my-4 bg-white dark:bg-background-secondary shadow rounded transition-colors duration-500"
+              className="bg-white dark:bg-background-secondary shadow rounded my-4 transition-colors duration-500"
             >
               <Link
                 to={{
@@ -64,7 +64,7 @@ const Home = () => {
                   },
                 }}
               >
-                <Post {...postObject} />
+                <Post {...postObject} allowHover />
               </Link>
             </div>
           );

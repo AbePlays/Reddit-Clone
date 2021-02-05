@@ -20,8 +20,8 @@ const Details = () => {
         `https://www.reddit.com/comments/${postId}.json`
       );
       const fetchedData = await result.json();
-      setComments(fetchedData[1]?.data?.children);
 
+      setComments(fetchedData[1]?.data?.children);
       setLoading(false);
     };
 

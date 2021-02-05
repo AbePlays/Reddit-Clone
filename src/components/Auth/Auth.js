@@ -8,12 +8,12 @@ const Auth = () => {
 
   return (
     <Wrapper>
-      <div className="p-4 shadow bg-white dark:bg-background-secondary transition-colors duration-500 rounded font-semibold text-center">
+      <div className="shadow bg-white dark:bg-background-secondary transition-colors duration-500 p-4 rounded font-semibold text-center">
         <img src={background} alt="security" />
         <div className="mt-8 font-medium">
           <h1>To use the application, please login or create an account</h1>
           <div
-            className="mt-4 flex justify-center items-center border w-max mx-auto py-2 px-4 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white transition duration-300"
+            className="flex justify-center items-center border w-max mx-auto py-2 px-4 mt-4 rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary transition duration-300"
             onClick={() => loginWithRedirect()}
           >
             <svg

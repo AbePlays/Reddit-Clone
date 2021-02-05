@@ -5,7 +5,11 @@ import Comment from "../Comment";
 
 const Post = (props) => {
   return (
-    <div className="p-4 dark:text-white-dark text-black">
+    <div
+      className={`p-4 dark:text-white-dark text-black transition-colors duration-500 ${
+        props.allowHover && "hover:shadow-xl transition-shadow duration-300"
+      }`}
+    >
       <PostHeader
         subRedditName={props.subRedditName}
         authorName={props.authorName}

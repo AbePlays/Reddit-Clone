@@ -2,7 +2,7 @@ import { kFormatter } from "../Utility";
 
 const CommentFooter = ({ upvotes }) => {
   return (
-    <div className="flex items-center mt-2 text-gray-500 text-xs font-semibold">
+    <div className="flex items-center mt-2 dark:text-white-dark text-text-primary transition-colors duration-500 text-xs font-semibold">
       <svg
         className="w-3"
         xmlns="http://www.w3.org/2000/svg"
