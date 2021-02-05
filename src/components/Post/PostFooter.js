@@ -2,7 +2,7 @@ import { kFormatter } from "../Utility";
 
 const PostFooter = ({ upvotes, comments }) => {
   return (
-    <div className="flex items-center mt-6 text-text-primary dark:text-white-dark text-xs font-bold">
+    <div className="flex flex-wrap items-center mt-6 text-color-secondary text-xs font-bold">
       {upvotes && (
         <div className="flex items-center">
           <svg

@@ -1,5 +1,5 @@
 const CommentBody = ({ body }) => {
-  return <p className="leading-snug font-light">{body}</p>;
+  return <p className="leading-snug font-light text-color-primary">{body}</p>;
 };
 
 export default CommentBody;

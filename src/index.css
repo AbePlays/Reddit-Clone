@@ -17,6 +17,24 @@
   height: 54px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #ff5700;
-  border-color: #ff5700 transparent #ff5700 transparent;
+  border: 6px solid #f05454;
+  border-color: #f05454 transparent #f05454 transparent;
+}
+
+/* Extracted classes */
+
+.background-primary {
+  @apply bg-background-primary-light dark:bg-background-primary-dark transition-colors duration-500;
+}
+
+.background-secondary {
+  @apply bg-white dark:bg-background-secondary transition-colors duration-500;
+}
+
+.text-color-primary {
+  @apply text-black dark:text-white-dark transition-all duration-500;
+}
+
+.text-color-secondary {
+  @apply text-text-primary dark:text-white-dark transition-colors duration-500;
 }

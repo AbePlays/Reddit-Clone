@@ -5,7 +5,7 @@ const Logout = () => {
 
   return (
     <div
-      className="h-8 w-8 flex justify-center items-center ml-2 border border-border rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary transition duration-300"
+      className="h-8 w-8 flex justify-center items-center ml-2 text-color-secondary border border-border rounded-md tracking-widest uppercase text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary"
       onClick={() =>
         logout({
           returnTo: window.location.origin,

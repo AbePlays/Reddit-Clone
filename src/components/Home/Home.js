@@ -54,7 +54,7 @@ const Home = () => {
           return (
             <div
               key={post.data.id}
-              className="bg-white dark:bg-background-secondary shadow rounded my-4 transition-colors duration-500"
+              className="background-secondary shadow rounded my-4"
             >
               <Link
                 to={{

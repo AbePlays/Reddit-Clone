@@ -1,7 +1,9 @@
 const PostBody = ({ title, videoUrl, imageUrl }) => {
   return (
     <>
-      {title && <p className="mt-2 text-lg leading-snug">{title}</p>}
+      {title && (
+        <p className="mt-2 text-lg leading-snug text-color-primary">{title}</p>
+      )}
       {videoUrl ? (
         <div className="mt-2 rounded overflow-hidden">
           <video className="mx-auto rounded" controls>
@@ -12,7 +14,7 @@ const PostBody = ({ title, videoUrl, imageUrl }) => {
         imageUrl && (
           <div className="mt-2 rounded overflow-hidden">
             <img
-              className="mx-auto rounded"
+              className="mx-auto rounded object-cover"
               src={imageUrl.replaceAll("amp;", "")}
               alt="post"
               loading="lazy"

@@ -30,7 +30,7 @@ const Details = () => {
 
   return (
     <Wrapper>
-      <div className="bg-white dark:bg-background-secondary my-4 shadow rounded transition-colors duration-500">
+      <div className="background-secondary my-4 shadow rounded">
         <Post
           {...state.post}
           showComments

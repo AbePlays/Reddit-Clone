@@ -5,7 +5,7 @@ const Comment = ({ loading, comments }) => {
   return loading ? (
     <Spinner />
   ) : (
-    <div className="mt-6 dark:text-white-dark text-black transition-colors duration-500">
+    <div className="mt-6 px-1">
       {comments.map((comment) => {
         if (comment.data) {
           return (
